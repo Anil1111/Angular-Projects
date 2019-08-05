@@ -26,9 +26,5 @@ export class HeroesComponent implements OnInit {
     this.router.navigate( ['/heroe', idx] )
   }
 
-  burcarHeroes(termino:string){
-    let heroesArr: Heroe[] = [];
-
-  }
 
 }
