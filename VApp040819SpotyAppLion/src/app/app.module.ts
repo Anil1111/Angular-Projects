@@ -6,6 +6,12 @@ import { HomeComponent } from './components/home/home.component';
 import { ArtistaComponent } from './components/artista/artista.component';
 import { NavbarComponent } from './components/shared/navbar/navbar.component';
 import { SearchComponent } from './components/search/search.component';
+import { RouterModule} from '@angular/router';
+
+/**  Rutas */
+import { ROUTES } from './app.routes';
+
+
 
 @NgModule({
   declarations: [
@@ -16,7 +22,8 @@ import { SearchComponent } from './components/search/search.component';
     SearchComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    RouterModule.forRoot( ROUTES, { useHash: true })
   ],
   providers: [],
   bootstrap: [AppComponent]
