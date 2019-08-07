@@ -31,5 +31,6 @@ export class AppComponent {
 
   video = "Hyj_CrvS5-o";
 
-
+  password = "elinmortal";
+  activar: boolean = true;
 }
