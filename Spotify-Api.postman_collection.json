@@ -1,0 +1,108 @@
+{
+	"info": {
+		"_postman_id": "14013ca4-f27a-4c78-a53f-0ebe661b59f2",
+		"name": "Spotify-Api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Language API",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": ""
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Token",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"type": "text"
+						},
+						{
+							"key": "client_id",
+							"value": "0f6838d1ad1c44568e2ae04f09c04d08",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "c09954b52d3d4209bbe2b2ab2e5bee74",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://accounts.spotify.com/api/token",
+					"protocol": "https",
+					"host": [
+						"accounts",
+						"spotify",
+						"com"
+					],
+					"path": [
+						"api",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "new-releases",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"name": "Content-Type",
+						"value": "Bearer BQDb21xSkHRCkz4sNlw0HzurhEx8zwXSR955SXQ1aB4wPaqHkTrXS_PSQabm2CFx-Ct4bhhI7zZ2h2mcg3g",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "Bearer BQDb21xSkHRCkz4sNlw0HzurhEx8zwXSR955SXQ1aB4wPaqHkTrXS_PSQabm2CFx-Ct4bhhI7zZ2h2mcg3g"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": []
+				},
+				"url": {
+					"raw": "https://api.spotify.com/v1/browse/new-releases",
+					"protocol": "https",
+					"host": [
+						"api",
+						"spotify",
+						"com"
+					],
+					"path": [
+						"v1",
+						"browse",
+						"new-releases"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
