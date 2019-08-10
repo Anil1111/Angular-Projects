@@ -7,6 +7,7 @@ import { FooterComponent } from './components/common/footer/footer.component';
 import { NavComponent } from './components/common/nav/nav.component';
 import { ProductsModule } from './views/products/products.module';
 import { routes } from './app.routing';
+import { HttpClientModule } from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { routes } from './app.routing';
   imports: [
     BrowserModule,
     RouterModule.forRoot(routes),
-    ProductsModule
+    ProductsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
