@@ -1,12 +1,24 @@
 {
-    "products": [
-        {
-            "id": 101,
-            "name": "Celular 1"
-          },
-          {
-           "id": 102,
-            "name": "Laptop 1"
-          }
-    ]
+  "products": [
+    {
+      "id": 101,
+      "name": "Celular 1"
+    },
+    {
+      "id": 102,
+      "name": "Laptop 1"
+    },
+    {
+      "id": 103,
+      "name": "Laptop 2"
+    },
+    {
+      "id": 104,
+      "name": "Celular 2"
+    },
+    {
+      "id": 105,
+      "name": "parlantes 1"
+    }
+  ]
 }
