@@ -12,6 +12,8 @@ import { RouterModule} from '@angular/router';
 
 /**  Rutas */
 import { ROUTES } from './app.routes';
+
+// pipes  
 import { NoimagePipe } from './pipes/noimage.pipe';
 
 
