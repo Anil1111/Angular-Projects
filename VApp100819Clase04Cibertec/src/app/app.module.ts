@@ -8,14 +8,12 @@ import { NavComponent } from './components/common/nav/nav.component';
 import { ProductsModule } from './views/products/products.module';
 import { routes } from './app.routing';
 import { HttpClientModule } from "@angular/common/http";
-import { ProductFormComponent } from './views/products/shared/forms/product-form/productForm.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     FooterComponent,
-    NavComponent,
-    ProductFormComponent
+    NavComponent
   ],
   imports: [
     BrowserModule,

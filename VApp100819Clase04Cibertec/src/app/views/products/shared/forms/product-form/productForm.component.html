@@ -7,5 +7,6 @@
       <label for="txtName">Product name</label>
       <input type="text" class="form-control" id="txtName" aria-describedby="emailHelp" placeholder="Enter product name">      
     </div>    
-    <button type="submit" class="btn btn-outline-primary">Submit</button>
+    <button type="button" class="btn btn-outline-primary" (click)="onChildClick()">{{buttonTitle}}</button>
+    <button type="button" class="btn btn-outline-primary" (click)="return()">Cancelar</button>
   </form>
