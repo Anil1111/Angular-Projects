@@ -16,9 +16,12 @@
             <td>{{ prod.name | shortText : 10 }}</td>
             <td>
                 <button class="btn btn-sm btn-info" type="button">Deshabilitar</button>
-                <a [routerLink]="['/products', prod.id]" class="btn btn-sm btn-primary" type="button">Ver detalles</a>
+                <a [routerLink]="['/products', prod.id]" class="btn btn-sm btn-primary" (click)="getProduct(prod.id)" type="button">Ver detalles</a>
                 <button class="btn btn-sm btn-danger" (click)="onRemove(prod.id)" type="button">Eliminar</button>
             </td>
         </tr>
     </tbody>
 </table>
+
+
+

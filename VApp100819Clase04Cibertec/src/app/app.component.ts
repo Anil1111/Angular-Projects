@@ -1,10 +1,18 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
-  title = 'cibertecAngular42';
+export class AppComponent implements OnInit{
+  title = 'curso Angular Cibertec';
+  year:number = (new Date()).getFullYear(); 
+
+ngOnInit(){
+  setTimeout(()=>{
+    this.title = 'Angular +++';
+  }, 1500);
+}
+
 }

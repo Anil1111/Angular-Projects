@@ -11,6 +11,7 @@ import { ProductsService } from '../shared/services/products.service';
 export class ListProductComponent implements OnInit {
 
   allProducts: Product[];
+  product: Product;
 
   constructor(
     private sortPipe: SortPipe,
@@ -29,6 +30,9 @@ export class ListProductComponent implements OnInit {
          this.nuevasCanciones = data;
       });
    */
+
+
+
 
   onSort(value: string) {
     this.sortPipe.transform(

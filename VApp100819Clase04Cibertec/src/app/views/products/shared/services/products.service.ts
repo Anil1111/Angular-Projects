@@ -8,7 +8,8 @@ import { environment } from 'src/environments/environment.prod';
 @Injectable()
 export class ProductsService {
 
-    private api:string = environment.api;
+    //private api:string = environment.api;
+    private api:string = 'http://localhost:3000';
     private endpoint:string = 'products';
 
     
@@ -21,8 +22,8 @@ export class ProductsService {
     }
 
     getProduct(id: number) {
-        //const prod = this.products.filter(prod => prod.id === id); // []
-        //return prod[0];
+        const URL:string = `${this.api}/${this.endpoint}/${id}`;
+        return this.http.get(URL);
     }
 
     deleteProduct(id: number) {
