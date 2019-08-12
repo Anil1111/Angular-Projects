@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ProductsService } from '../shared/services/products.service';
 import Product from '../product.model';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -9,10 +9,11 @@ import { Subscription } from 'rxjs';
   templateUrl: './edit-product.component.html',
   styleUrls: ['./edit-product.component.css']
 })
-export class EditProductComponent implements OnInit {
+export class EditProductComponent implements OnInit, OnDestroy {
 
   product: Product;
   updateSubs: Subscription;
+
   constructor(
     private route: ActivatedRoute,
     private router: Router,
@@ -22,16 +23,16 @@ export class EditProductComponent implements OnInit {
   ngOnInit() {
     const { id } = this.route.snapshot.params;
 
-    this.updateSubs = this.productService.getProduct(id).subscribe((data: Product) => {
-      this.product = data;
-      console.log(this.product);
+    this.productService.getProduct(+id).subscribe((product: Product) => {
+      this.product = product;
     });
+
     console.log(this.product);
   }
 
   onSubmit(parametro) {
-    this.updateSubs = this.productService.updateProduct({ id: 102, name: 'mac1' })
-      .subscribe(() => {
+    this.updateSubs = this.productService.updateProduct({ id: 100, name: 'Mac 2' })
+      .subscribe(() =>{
         this.router.navigate(['/products']);
       });
   }
@@ -39,5 +40,6 @@ export class EditProductComponent implements OnInit {
   ngOnDestroy() {
     this.updateSubs.unsubscribe();
   }
+  
 
 }

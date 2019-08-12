@@ -8,16 +8,16 @@ import { CreateProductComponent } from './create-product/create-product.componen
 import { EditProductComponent } from './edit-product/edit-product.component';
 import { RouterModule } from '@angular/router';
 import { ProductsService } from './shared/services/products.service';
-import { ProductFormComponent } from './shared/forms/product-form/productForm.component';
+import { ProductFormComponent } from './shared/forms/product-form/product-form.component';
 
 @NgModule({
   declarations: [
     ListProductComponent,
     HoverDirective,
     ShorTextPipe,
+    ProductFormComponent,
     CreateProductComponent,
-    EditProductComponent,
-    ProductFormComponent
+    EditProductComponent
   ],
   imports: [
     CommonModule,

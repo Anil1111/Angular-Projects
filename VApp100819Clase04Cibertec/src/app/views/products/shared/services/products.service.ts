@@ -1,20 +1,20 @@
 import { Injectable } from '@angular/core';
 
-//import { products } from '../../../../mocks/products';
 import Product from '../../product.model';
-import { HttpClient } from "@angular/common/http";
-import { environment } from 'src/environments/environment.prod';
+
+import { HttpClient } from '@angular/common/http';
+import { filter, scan } from 'rxjs/operators';
+import { environment } from '../../../../../environments/environment';
 
 @Injectable()
 export class ProductsService {
 
-    //private api:string = environment.api;
-    private api: string = 'http://localhost:3000';
+    private api: string = environment.api;
     private endpoint: string = 'products';
 
-
-
-    constructor(private http: HttpClient) { }
+    constructor(
+        private http: HttpClient
+    ) {}
 
     getProducts() {
         const URL: string = `${this.api}/${this.endpoint}`;
@@ -27,23 +27,23 @@ export class ProductsService {
     }
 
     deleteProduct(id: number) {
-        const URL: string = `${this.api}/${this.endpoint}`;
-        return this.http.delete(`${URL}/${id}`);
-        //this.products = this.products.filter(prod => prod.id !== id);
+        const URL: string = `${this.api}/${this.endpoint}/${id}`;
+        return this.http.delete(URL);
     }
 
-    updateProduct(product:Product) {
-        const URL: string = `${this.api}/${this.endpoint}/${product.id}`;
-        return this.http.put(URL, Product,{
+    createProduct(product: Product) {
+        const URL: string = `${this.api}/${this.endpoint}`;
+        return this.http.post(URL, product, {
             headers: {
                 'Content-type': 'application/json'
             }
         });
     }
 
-    createProduct(product: Product) {
-        const URL: string = `${this.api}/${this.endpoint}`;
-        return this.http.post(URL, product, {
+    updateProduct(product: Product) {
+        const URL: string = `${this.api}/${this.endpoint}/${product.id}`;
+
+        return this.http.put(URL, product, {
             headers: {
                 'Content-type': 'application/json'
             }

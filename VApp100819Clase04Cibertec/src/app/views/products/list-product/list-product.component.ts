@@ -1,4 +1,4 @@
-import { Component, OnInit, ɵConsole } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import Product from '../product.model';
 import { SortPipe } from '../shared/pipes/sort.pipe';
 import { ProductsService } from '../shared/services/products.service';
@@ -11,7 +11,6 @@ import { ProductsService } from '../shared/services/products.service';
 export class ListProductComponent implements OnInit {
 
   allProducts: Product[];
-  product: Product;
 
   constructor(
     private sortPipe: SortPipe,
@@ -19,20 +18,10 @@ export class ListProductComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.productService.getProducts().subscribe((data:any) => {      
-      this.allProducts = data;
-      //      this.allProducts = data;
+    this.productService.getProducts().subscribe((products: Product[]) => {
+      this.allProducts = products;
     });
   }
-  /**
-   * 
-   * .subscribe((data: any) => {
-         this.nuevasCanciones = data;
-      });
-   */
-
-
-
 
   onSort(value: string) {
     this.sortPipe.transform(
@@ -42,11 +31,9 @@ export class ListProductComponent implements OnInit {
   }
 
   onRemove(id: number) {
-    this.productService.deleteProduct(id).subscribe((response)=>{
-      console.log(response);
-      this.allProducts = this.allProducts.filter(prod=> prod.id != id);
+    this.productService.deleteProduct(id).subscribe((response) => {
+      this.allProducts = this.allProducts.filter(prod =>  prod.id !== id);
     });
-    
   }
 
 }

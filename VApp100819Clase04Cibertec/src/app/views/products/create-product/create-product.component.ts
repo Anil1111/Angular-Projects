@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductsService } from '../shared/services/products.service';
 import Product from '../product.model';
-import { ClassGetter } from '@angular/compiler/src/output/output_ast';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-create-product',
@@ -10,16 +10,19 @@ import { ClassGetter } from '@angular/compiler/src/output/output_ast';
 })
 export class CreateProductComponent implements OnInit {
 
-  constructor(private productService:ProductsService) { }
+  constructor(
+    private productService: ProductsService,
+    private router: Router
+  ) { }
 
   ngOnInit() {
   }
 
- onSubmit(){
-   this.productService.createProduct({name:'carrito 1'})
-      .subscribe((product:Product)=>{
-        console.log(product);
+  onSubmit() {
+    this.productService.createProduct({ name: 'Test 1'})
+      .subscribe((product: Product) => {
+        this.router.navigate(['/products']);
       });
- }
+  }
 
 }

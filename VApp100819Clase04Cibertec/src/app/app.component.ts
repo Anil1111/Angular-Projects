@@ -5,14 +5,7 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit{
-  title = 'curso Angular Cibertec';
-  year:number = (new Date()).getFullYear(); 
-
-ngOnInit(){
-  setTimeout(()=>{
-    this.title = 'Angular +++';
-  }, 1500);
-}
-
+export class AppComponent {
+  title: string = 'Angular App';
+  year: number =  (new Date()).getFullYear();
 }

@@ -1,5 +1,4 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-nav',
@@ -8,7 +7,7 @@ import { Title } from '@angular/platform-browser';
 })
 export class NavComponent implements OnInit {
 
-   @Input() title;
+  @Input() title;
 
   constructor() { }
 
